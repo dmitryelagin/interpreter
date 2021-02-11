@@ -1,15 +1,16 @@
+import 'package:interpreter/src/char_code.dart';
 import 'package:interpreter/src/token/token.dart';
 import 'package:interpreter/src/traversable.dart';
 
 class TokenFactory extends Traversable<RuneIterator, Token> {
   static const _charCodeTokens = {
     -1: Token.endOfText,
-    43: Token.plus,
-    45: Token.minus,
-    42: Token.star,
-    47: Token.slash,
-    40: Token.leftParenthesis,
-    41: Token.rightParenthesis,
+    CharCode.plus: Token.plus,
+    CharCode.minus: Token.minus,
+    CharCode.star: Token.star,
+    CharCode.slash: Token.slash,
+    CharCode.leftParenthesis: Token.leftParenthesis,
+    CharCode.rightParenthesis: Token.rightParenthesis,
   };
 
   @override

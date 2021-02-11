@@ -24,6 +24,10 @@ void main() {
       expect(interprete('+ 3'), 3);
       expect(interprete('5 - - - + - 3'), 8);
       expect(interprete('5 - - - + - (3 + 4) - +2'), 10);
+      expect(interprete('3.14'), 3.14);
+      expect(interprete('.14 * 2'), 0.28);
+      expect(interprete('(34. - 6) / 2'), 14);
+      expect(interprete('-.5 - (-1) - + - 2.0 * 4.25'), 9);
     });
   });
 }

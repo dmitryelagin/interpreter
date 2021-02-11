@@ -15,9 +15,10 @@ import 'package:interpreter/src/precedence/recursive_precedence.dart';
 import 'package:interpreter/src/precedence/unary_precedence.dart';
 import 'package:interpreter/src/precedence/valuable_precedence.dart';
 import 'package:interpreter/src/token/token.dart';
-import 'package:interpreter/src/token_factory/integer_token_factory.dart';
+import 'package:interpreter/src/token_factory/number_token_factory.dart';
 import 'package:interpreter/src/token_factory/token_factory.dart';
 import 'package:interpreter/src/token_parser/binary_token_parser.dart';
+import 'package:interpreter/src/token_parser/float_token_parser.dart';
 import 'package:interpreter/src/token_parser/integer_token_parser.dart';
 import 'package:interpreter/src/token_parser/unary_token_parser.dart';
 
@@ -32,7 +33,7 @@ Future<void> main(List<String> arguments) async {
 
 Interpreter buildInterpreter() => Interpreter(
       Lexer([
-        IntegerTokenFactory(),
+        NumberTokenFactory(),
         TokenFactory(),
       ]),
       Parser([
@@ -68,6 +69,7 @@ Interpreter buildInterpreter() => Interpreter(
         ]),
         ValuablePrecedence([
           IntegerTokenParser(),
+          FloatTokenParser(),
         ]),
         RecursivePrecedence(
           (token) => token == Token.leftParenthesis,
