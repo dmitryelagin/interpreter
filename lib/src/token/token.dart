@@ -6,7 +6,6 @@ class Token {
   static const none = Token._(TokenType.none);
   static const endOfText = Token._(TokenType.endOfText);
   static const plus = Token._(TokenType.plus);
-  static const float = Token._(TokenType.float);
   static const minus = Token._(TokenType.minus);
   static const star = Token._(TokenType.star);
   static const slash = Token._(TokenType.slash);
